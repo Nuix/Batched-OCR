@@ -69,7 +69,7 @@ if dialog.getDialogResult == true
 		total_batches = ($current_selected_items.size.to_f / values["target_batch_size"].to_f).ceil
 		pd.setMainProgress(0,total_batches)
 		stop_requested = false
-		$current_selected_items.to_a.each_slice(values["target_batch_size"]) do |slice_items|
+		$current_selected_items.each_slice(values["target_batch_size"]) do |slice_items|
 			break if pd.abortWasRequested
 			pd.setSubProgress(0,slice_items.size)
 			pd.setMainStatusAndLogIt("Processing Batch #{batch_index+1}")
