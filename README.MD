@@ -3,7 +3,7 @@ Batched OCR
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0) ![This script was last tested in Nuix 7.8](https://img.shields.io/badge/Script%20Tested%20in%20Nuix-7.8-green.svg)
 
-View the GitHub project [here](LINK_TO_PROJECT) or download the latest release [here](LINK_TO_PROJECT_RELEASES).
+View the GitHub project [here](https://github.com/Nuix/Batched-OCR) or download the latest release [here](https://github.com/Nuix/Batched-OCR/releases).
 
 # Overview
 
