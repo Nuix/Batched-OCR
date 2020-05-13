@@ -1,7 +1,3 @@
-# Menu Title: Batched OCR
-# Needs Case: true
-# Needs Selected Items: true
-
 script_directory = File.dirname(__FILE__)
 require File.join(script_directory,"Nx.jar")
 java_import "com.nuix.nx.NuixConnection"
@@ -15,6 +11,14 @@ java_import "com.nuix.nx.digest.DigestHelper"
 LookAndFeelHelper.setWindowsIfMetal
 NuixConnection.setUtilities($utilities)
 NuixConnection.setCurrentNuixVersion(NUIX_VERSION)
+
+# Added section to validate that user has selected items in the results pane, as the special metadata for script bundles is not functioning correctly
+if($current_selected_items.nil? || $current_selected_items.size < 1)
+	puts "The user did not select any items in the results pane. This script requires a selection to proceed. Script exiting..."
+	CommonDialogs.showError("No Items Selected in Results Pane\r\nScript exiting...","No Items Selected")
+	exit 1
+end
+
 
 dialog = TabbedCustomDialog.new("Batched OCR")
 
